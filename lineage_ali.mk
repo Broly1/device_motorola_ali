@@ -17,18 +17,19 @@
 $(call inherit-product, device/motorola/ali/device.mk)
 
 # Inherit some common Pixel Experience stuff.
-$(call inherit-product, vendor/aosp/config/common_full_phone.mk)
-TARGET_GAPPS_ARCH := arm64
+$(call inherit-product, vendor/lineage/config/common_full_phone.mk)
+TARGET_INCLUDE_LIVE_WALLPAPERS := false
 TARGET_BOOT_ANIMATION_RES := 1080
-TARGET_INCLUDE_STOCK_ARCORE := true
 
 ## Device identifier. This must come after all inclusions
 PRODUCT_BRAND := motorola
 PRODUCT_MANUFACTURER := motorola
-PRODUCT_NAME := aosp_ali
+PRODUCT_NAME := lineage_ali
 PRODUCT_DEVICE := ali
 PRODUCT_MODEL := moto g(6)
 
 # Build Fingerprint
 PRODUCT_BUILD_PROP_OVERRIDES += \
     PRIVATE_BUILD_DESC="ali-user 9 PPS29.118-15-11-16 3afd9 release-keys"
+
+BUILD_FINGERPRINT := motorola/ali/ali:9/PPS29.118-11/aa435:user/release-keys

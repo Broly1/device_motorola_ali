@@ -2,7 +2,7 @@
   {
     "repository": "device_motorola_msm8953-common",
     "target_path": "device/motorola/msm8953-common",
-    "branch": "eleven-wip"
+    "branch": "eleven"
   },
   {
     "remote": "pixel-devices-blobs",

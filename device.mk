@@ -16,18 +16,12 @@
 # Vendor blobs
 $(call inherit-product-if-exists, vendor/motorola/ali/ali-vendor.mk)
 
-# Dolby
-$(call inherit-product-if-exists, vendor/motorola/motodolby/dolby.mk)
-
 # Device Path
 DEVICE_PATH := device/motorola/ali
 
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += \
     $(DEVICE_PATH)/overlay
-
-# Device properties
-$(call inherit-product, $(DEVICE_PATH)/device_prop.mk)
 
 # Screen density
 PRODUCT_AAPT_PREF_CONFIG := xxhdpi
@@ -66,6 +60,11 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     $(DEVICE_PATH)/configs/nfc/libnfc-nci.conf:$(TARGET_COPY_OUT_VENDOR)/etc/libnfc-nci.conf \
     $(DEVICE_PATH)/configs/nfc/libnfc-nxp.conf:$(TARGET_COPY_OUT_VENDOR)/etc/libnfc-nxp.conf
+
+PRODUCT_COPY_FILES += \
+    frameworks/native/data/etc/android.hardware.nfc.xml:$(TARGET_COPY_OUT_ODM)/etc/permissions/sku_nfc/android.hardware.nfc.xml \
+    frameworks/native/data/etc/android.hardware.nfc.hce.xml:$(TARGET_COPY_OUT_ODM)/etc/permissions/sku_nfc/android.hardware.nfc.hce.xml \
+    frameworks/native/data/etc/android.hardware.nfc.hcef.xml:$(TARGET_COPY_OUT_ODM)/etc/permissions/sku_nfc/android.hardware.nfc.hcef.xml
 
 # Init
 PRODUCT_PACKAGES += \
